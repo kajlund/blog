@@ -20,6 +20,7 @@ description: Various Tools for JS Development
 ## Data
 
 - [Mackaroo](https://mockaroo.com/) - realistic data generator
+- [ExtendsClass](https://extendsclass.com/csv-generator.html)
 
 ## Diff
 
