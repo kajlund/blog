@@ -27,12 +27,17 @@ description: UX resources
 - [Top UI/UX Design Works for Inspiration — #94](https://uxplanet.org/top-ui-ux-design-inspiration-94-cfbfb2c7c9ad)
 - [Top UI/UX Design Works for Inspiration — #102](https://uxplanet.org/top-ui-ux-design-inspiration-102-a2966ee01069)
 
+## Libraries
+
+- [ICONS8](https://icons8.com/) - Icons, illustrations, photos, music, and design tools
+
 ## Tools
 
 - [Awesome Design Tools](https://github.com/LisaDziuba/Awesome-Design-Tools)
 - [ProjectVisBug](https://github.com/GoogleChromeLabs/ProjectVisBug)
 - [Axure](http://www.axure.com/) interactive wireframing
 - [Prevue](https://prevue.it/) is a design sharing tool for designers and agencies.
+- [Figma](https://www.figma.com/) - helps teams create, test, and ship better designs from start to finish.
 - [FramerJS](http://framerjs.com/) prototyping
 - [Wireframe.cc](https://wireframe.cc/) is a simple online wireframing tool
 - [Invision](http://www.invisionapp.com/) design prototyping

@@ -12,8 +12,7 @@ description: Libraries and tools for testing code
 - [Lab](https://github.com/hapijs/lab) is a simple test utility for node.
 - [Mocha](http://mochajs.org/) is a feature-rich JavaScript test framework running on Node.js and the browser, making asynchronous testing simple and fun.
 - [Tape](https://github.com/substack/tape) tap-producing test harness for node and browsers
-- [qUnit](http://qunitjs.com/) - Simple unit testing framework used by jQuery
-- [Karma](http://karma-runner.github.io/0.12/index.html)
+- [uvu](https://github.com/lukeed/uvu) - is an extremely fast and lightweight test runner for Node.js and the browser.
 - [Intern](https://theintern.github.io/)
 - [DalekJS](http://dalekjs.com/) Cross-browser testing
 

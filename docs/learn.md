@@ -52,7 +52,7 @@ Description: Stuff to look into
 - [Understanding es6](https://github.com/nzakas/understandinges6/tree/master/manuscript)
 - [You Don't Know JS book series](https://github.com/getify/You-Dont-Know-JS)
 
-## Books
+## Publishers
 
 - [Apress](http://www.apress.com/)
 - [Blinkist](https://www.blinkist.com/) - Key takeaways from the world’s best nonfiction books in text and audio

@@ -11,6 +11,7 @@ description: Developer resources
 - [elm](https://elm-lang.org/) - A delightful language for reliable webapps.
 - [ember.js](http://emberjs.com/) - A framework for creating abitious web applications
 - [Hyperapp](https://github.com/jorgebucaran/hyperapp) - 1 kB JavaScript micro-framework for building declarative web applications
+- [inertia](https://inertiajs.com/) - Build single-page apps, without building an API.
 - [Material Web Components](https://github.com/material-components/material-components-web-components)
 - [Polymer](https://www.polymer-project.org)
 - [Preact](https://preactjs.com/) - Fast 3kB alternative to React with the same modern API.

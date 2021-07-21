@@ -45,6 +45,7 @@ description: Developer resources
 - :+1: [date-fns](https://date-fns.org/) - Modern JavaScript date utility library
 - [datejs](http://www.datejs.com/) - A JavaScript Date Library
 - [dayjs](https://github.com/iamkun/dayjs) - Day.js 2KB immutable date library alternative to Moment.js with the same modern API
+- [Light Date](https://github.com/xxczaki/light-date) - Blazing fast & lightweight (157 bytes) date formatting for Node.js and the browser.
 - [Luxon](https://moment.github.io/luxon/) - A powerful, modern, and friendly wrapper for Javascript dates and times.
   jQuery!
 - [Moment.js](http://momentjs.com/) - Parse, validate, manipulate, and display dates in JavaScript.
@@ -52,6 +53,10 @@ description: Developer resources
 - [Spacetime](https://github.com/smallwins/spacetime) - A lightweight javascript timezone library
 - [TinyDate](https://github.com/lukeed/tinydate) - A tiny (340B) reusable date formatter. Extremely fast!
 - [tinytime](https://github.com/aweary/tinytime) - A straightforward date and time formatter in <1kb
+
+## File System
+
+- [fdir](https://github.com/thecodrr/fdir) - The Fastest Directory Crawler & Globber for NodeJS
 
 ## Generic
 
@@ -113,6 +118,7 @@ description: Developer resources
 - [Chance](https://chancejs.com) - Generate random strings, numbers etc.
 - [clipboardjs](https://clipboardjs.com/) - A modern approach to copy text to clipboard. No Flash. No dependencies.
 - [crypto-js](https://code.google.com/archive/p/crypto-js/) - JavaScript implementations of standard and secure cryptographic algorithms
+- [dragmove.js](https://github.com/knadh/dragmove.js) - A super tiny Javascript library to make DOM elements draggable and movable.
 - [flexsearch](https://github.com/nextapps-de/flexsearch) - Next-Generation full text search library for Browser and Node.js
 - [highlight.js](https://highlightjs.org/) - Syntax highlighting for the Web
 - [Honeypot](https://github.com/Shmakov/Honeypot) - Low interaction honeypot that displays real time attacks
@@ -132,12 +138,14 @@ description: Developer resources
 - [Papa Parse](http://papaparse.com/) CSV parser
 - [pdfmake](http://pdfmake.org/#/) - Client/server side PDF printing in pure JavaScript
 - [pdfkit](https://github.com/foliojs/pdfkit)
+- [Print.js](https://printjs.crabbly.com/) - A tiny javascript library to help printing from the web.
 - [QuaggaJS](https://serratus.github.io/quaggaJS/) is a barcode-scanner entirely written in JavaScript supporting real- time localization and decoding of various types of barcodes such as EAN, CODE 128, CODE 39, EAN 8, UPC-A, UPC-C, I2of5 and CODABARthey've lost internet connectivity
 - [Ramda](https://ramdajs.com/) - practical functional library for JavaScript programmers.
 - [remarkabl](https://github.com/jonschlinkert/remarkable) - Markdown parser, done right. Commonmark support, extensions, syntax plugins, high speed
 - [Rough Notation](https://roughnotation.com/) - A small JavaScript library to create and animate annotations on a web page
 - [string-similarity](https://github.com/aceakash/string-similarity) - Finds degree of similarity between two strings, based on Dice's Coefficient, which is mostly better than Levenshtein distance.
 - [Tornis](https://tornis.robbowen.digital/) - A minimal JavaScript library that watches the state of your browser's viewport
+- [Tweakpane](https://cocopon.github.io/tweakpane/) - Compact pane library for fine-tuning parameters and monitoring value changes.
 - [upup](https://www.talater.com/upup/) - a tiny script that makes sure your site is always there for your users
 - [WebGazer.js](https://webgazer.cs.brown.edu/)
 - [v8n](https://imbrn.github.io/v8n/#what-s-v8n) - validation lib
@@ -177,6 +185,10 @@ description: Developer resources
 ## State
 
 - [Immer](https://github.com/immerjs/immer)
+
+## Typography
+
+- [ztext.js](https://bennettfeely.com/ztext/) - Easy to implement, 3D typography for the web. Works with every font.
 
 ## Webcomponents
 

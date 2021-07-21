@@ -5,6 +5,7 @@ description: Node.js Resources
 
 - [NODESCHOOL](https://nodeschool.io/sv/)
 - [Awesome Node.js](https://github.com/sindresorhus/awesome-nodejs) - A curated list of delightful Node.js packages and resources.
+- [Best Practices](https://github.com/goldbergyoni/nodebestpractices)
 - [NodeJS Official Docs](https://nodejs.org/en/docs/)
 - [Node Releases](https://github.com/nodejs/Release)
 - [NodeJS ES2015 Support](http://node.green/)
@@ -77,6 +78,7 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 - [htpie](https://github.com/lukeed/httpie) - A Node.js HTTP client as easy as pie! 🥧
 - [node-fetch](https://github.com/bitinn/node-fetch) - A light-weight module that brings window.fetch to Node.js
 - [restler](https://github.com/danwrong/restler) - REST client library for node.js
+- [undici](https://github.com/nodejs/undici) - A HTTP/1.1 client, written from scratch for Node.js.
 - [Wreck](https://github.com/hapijs/wreck) - HTTP Client Utilities for Hapi.js
 
 ## Images
@@ -173,5 +175,6 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 
 - [Commander.js](https://github.com/tj/commander.js/) - node.js command-line interfaces made easy
 - [Oclif](https://oclif.io/) The Open CLI Framework
+- [npkill](https://github.com/voidcosmos/npkill) - Easily find and remove old and heavy node_modules folders
 - [nvm](https://github.com/creationix/nvm) - Simple bash script to manage multiple active node.js versions
 - [nvm-Windows](https://github.com/coreybutler/nvm-windows) - A node.js version management utility for Windows. Ironically written in Go.

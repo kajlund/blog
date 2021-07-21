@@ -84,6 +84,7 @@ description: CSS Resources
 - [Hartija](https://github.com/vladocar/Hartija---CSS-Print-Framework) is a CSS printing stylesheet
 - [Hover.css](http://ianlunn.github.io/Hover/) is a collection of CSS3 powered hover effects
 - [Hint.css](http://kushagragour.in/lab/hint/) is a CSS tooltip library
+- [Pure CSS Loaders](https://loading.io/css/) -Open source CSS loading animations dedicated for speed, simplicity & dev-friendly.
 
 ## Misc
 
