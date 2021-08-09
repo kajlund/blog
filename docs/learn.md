@@ -87,6 +87,10 @@ Description: Stuff to look into
 - [This is CS50](https://cs50.harvard.edu/x/2020/) - Harvard Uni CS intro
 - [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
+## JavaScript
+
+- [286 Favorite JavaScript Utilities in single line of code](https://1loc.dev/)
+
 ## Misc
 
 - [Computer Science Education Resource Guide](http://www.smartscholar.com/computer-science-guide/)
