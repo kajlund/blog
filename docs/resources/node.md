@@ -54,6 +54,7 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
   - [Ts.ED](http://tsed.io/) - A TypeScript Framework on top of Express
 - :+1: [Fastify](https://www.fastify.io/) - Fast and low overhead web framework, for Node.js
 - [Feathers](http://feathersjs.com/) is a very thin wrapper on top of Express and Socket.io
+- [Foal.ts](https://foalts.org/) - The elegant all-in-one NodeJS framework
 - [hapi](http://hapijs.com/) - A rich framework for building applications and services
 - [Fullstack](https://github.com/serverless-components/fullstack-app) - Ready-to-use, serverless, full-stack application built with AWS Lambda, Express.js, React, AWS DynamoDB and AWS HTTP API
 - [Hydra](https://www.hydramicroservice.com/) - a NodeJS package, which facilitates building distributed applications such as Microservices
@@ -68,6 +69,7 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 - [Server.js](https://serverjs.io/) - Simple, modern server framework for REST and Socket.io
 - [strapi](http://strapi.io/) - The next generation framework for Node.js
 - [Supercharge](https://superchargejs.com/) website and [Github](https://github.com/superchargejs) page.
+- :+1 [TinyHTTP](https://tinyhttp.v1rtl.site/) is a modern, lightweight and modular Express-like web framework for Node.js.
 - [Trails](https://trailsjs.io/) - A Modern Web Application Framework for Node.js
 
 ## HTTP
@@ -78,7 +80,7 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 - [htpie](https://github.com/lukeed/httpie) - A Node.js HTTP client as easy as pie! 🥧
 - [node-fetch](https://github.com/bitinn/node-fetch) - A light-weight module that brings window.fetch to Node.js
 - [restler](https://github.com/danwrong/restler) - REST client library for node.js
-- [undici](https://github.com/nodejs/undici) - A HTTP/1.1 client, written from scratch for Node.js.
+- [Undici](https://undici.nodejs.org/#/) - A HTTP/1.1 client, written from scratch for Node.js.
 - [Wreck](https://github.com/hapijs/wreck) - HTTP Client Utilities for Hapi.js
 
 ## Images
@@ -89,10 +91,10 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 
 ## Logging
 
-- :+1: [Consola](https://github.com/nuxt/consola) - Elegant Console Logger for Node.js and Browser
+- :+1 [Consola](https://github.com/nuxt/consola) - Elegant Console Logger for Node.js and Browser
 - [Debug](https://github.com/visionmedia/debug#readme)
 - [dumper.js]https://github.com/ziishaned/dumper.js) - A better and pretty variable inspector for your Node.js applications
-- :+1: [Pino](http://getpino.io/#/) - Very low overhead Node.js logger, inspired by Bunyan.
+- :+1 [Pino](http://getpino.io/#/) - Very low overhead Node.js logger, inspired by Bunyan.
 - [roarr](https://github.com/gajus/roarr) -JSON logger for Node.js and browser.
 - [Winston](https://github.com/winstonjs/winston) a multi-transport async logging library for node.js
 - [Bragi-Node](https://github.com/enoex/Bragi-Node) is colorful, discrete, and sophisticated NodeJS logging framework
@@ -100,7 +102,7 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 - [morgan](https://github.com/expressjs/morgan) is the standard library used by express
 - [node-bunyan](https://github.com/trentm/node-bunyan) typically used with [Restify] along with [restify-bunyan-logger](https://github.com/AnyFetch/restify-bunyan-logger)
 - [signale](https://github.com/klaussinani/signale) - Hackable console logger
-- :+1: [tslog](https://tslog.js.org/#/) - Beautiful logging experience for Node.js with TypeScript support
+- :+1 [tslog](https://tslog.js.org/#/) - Beautiful logging experience for Node.js with TypeScript support
 
 ## Messaging
 
@@ -169,6 +171,7 @@ Have a look at the [Node Frameworks page](http://nodeframework.com/)
 - [Jade](http://jade-lang.com/) is the default templating language for express but I'm not sold on the syntax.
 - [Marko.js](https://markojs.com)
 - [Pug](https://pugjs.org/api/getting-started.html)
+- [tempura](https://github.com/lukeed/tempura) - A light, crispy, and delicious template engine 
 - [Vash](https://github.com/kirbysayshi/vash) Templating language with Razor syntax
 
 ## Tools

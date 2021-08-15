@@ -88,6 +88,7 @@ description: CSS Resources
 
 ## Misc
 
+- [Centering in CSS](https://web.dev/centering-in-css/)
 - [Grid By Example](https://gridbyexample.com/) - Learn CSS Grid
 - [The Ultimate Guide to Learning CSS](https://zendev.com/ultimate-guide-to-learning-css.html)
 - http://learnlayout.com/

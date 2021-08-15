@@ -4,14 +4,15 @@ lang: en-US
 description: Resources for building and consuming APIs
 ---
 
-* [json:api](https://jsonapi.org/) - A SPECIFICATION FOR BUILDING APIS IN JSON
+* [json:api](https://jsonapi.org/)
 * [API Design Guide](https://github.com/interagent/http-api-design)
 * [A Practical Approach to API Design](https://leanpub.com/restful-api-design)
+* [Design and Build Great Web APIs Robust, Reliable, and Resilient - Pragmatic Programmers](https://www.pragprog.com/titles/maapis/design-and-build-great-web-apis/)
 * [API Katalogen](http://apikatalogen.se/)
 * [Dropbox Developers](https://www.dropbox.com/developers)
 * [HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 * [Nordic APIs](https://nordicapis.com/api-ebooks/) - Our eBooks offer deeper dives into specific topics, consolidating expert opinions and case studies on APIs.
-* [JSON API](http://jsonapi.org/)
+* [JSON API](http://jsonapi.org/) - Specification for building APIs in JSON
 * [Learn REST](http://www.restapitutorial.com/)
 * [Mashup.se](http://www.mashup.se/) - Allt om APIer och öppna data
 

@@ -46,7 +46,7 @@ Description: Stuff to look into
 - [The GraphQL Guide](https://graphql.guide/)
 - [Learn Enough JavaScript to Be Dangerous](https://www.learnenough.com/javascript-tutorial)
 - [JavaScript Allongé](https://leanpub.com/javascriptallongesix)
-- [JavaScript for impatient programmers](http://exploringjs.com/impatient-js/index.html)
+- [JavaScript for impatient programmers](http://exploringjs.com/impatient-js/)
 - [Mastering Node.js](http://visionmedia.github.io/masteringnode/)
 - [Rapid ES6 Training by Mark Zamoyta](https://app.pluralsight.com/library/courses/rapid-es6-training/table-of-contents)
 - [Understanding es6](https://github.com/nzakas/understandinges6/tree/master/manuscript)
@@ -74,6 +74,8 @@ Description: Stuff to look into
 
 - [30 seconds of Code](https://30secondsofcode.org/)
 - [A set of best practices for JavaScript projects](https://github.com/elsewhencode/project-guidelines#readme)
+- [Algorithms and Data Structures](https://www.freecodecamp.org/news/algorithms-and-data-structures-free-treehouse-course/)
+- [Data Visualization Course](https://www.freecodecamp.org/news/learn-data-visualization-in-this-free-17-hour-course/)
 - [ES2015+ cheatsheet](https://devhints.io/es6)
 - [Four semesters of CS in 6 Hours](http://btholt.github.io/four-semesters-of-cs/)
 - [Frontend Developer Handbook](https://frontendmasters.com/books/front-end-handbook/2019/)
@@ -90,6 +92,7 @@ Description: Stuff to look into
 ## JavaScript
 
 - [286 Favorite JavaScript Utilities in single line of code](https://1loc.dev/)
+- [40 JavaScript Projects for Beginners – Easy Ideas to Get Started Coding JS](https://www.freecodecamp.org/news/javascript-projects-for-beginners/)
 
 ## Misc
 
@@ -109,6 +112,10 @@ Description: Stuff to look into
 - [CSS Weekly](http://css-weekly.com/)
 - [Node Weekly](http://nodeweekly.com/)
 - [Mobile Web Weekly](http://mobilewebweekly.co/)
+
+## Node.js
+
+- [FreeCodeCamp - Learn Node.js and Express](https://www.freecodecamp.org/news/free-8-hour-node-express-course/)
 
 ## Podcasts
 
@@ -156,6 +163,7 @@ I've set a thumbs down emoji :-1: for the ones that are not active anymore. Look
 - [Codecademy](https://www.codecademy.com/)
 - [EggHead.io](https://egghead.io/) - Video lessons on different webdev topics. Cheap and specialised when you need quick info on specific topics.
 - [Frontend Masters](https://frontendmasters.com/)
+  - [The Frontend Developer Learning Roadmap](https://frontendmasters.com/guides/learning-roadmap/) 
 - [KhanAcademy](https://www.khanacademy.org/)
 - [KnowThen](http://knowthen.com/)
 - :-1: [Lynda.com](http://www.lynda.com/) has tons of material, a bit more focused towards designers than developers.

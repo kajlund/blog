@@ -3,6 +3,9 @@ title: Testing
 description: Libraries and tools for testing code
 ---
 
+- [Best Practices](https://github.com/testjavascript/nodejs-integration-tests-best-practices)
+
+
 ## Test Runners
 
 - [Jasmine](http://jasmine.github.io/) is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.

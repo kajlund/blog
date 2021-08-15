@@ -44,7 +44,7 @@ description: Developer resources
 
 - :+1: [date-fns](https://date-fns.org/) - Modern JavaScript date utility library
 - [datejs](http://www.datejs.com/) - A JavaScript Date Library
-- [dayjs](https://github.com/iamkun/dayjs) - Day.js 2KB immutable date library alternative to Moment.js with the same modern API
+- [Day.js](https://day.js.org/en/) - Day.js 2KB immutable date library alternative to Moment.js with the same modern API
 - [Light Date](https://github.com/xxczaki/light-date) - Blazing fast & lightweight (157 bytes) date formatting for Node.js and the browser.
 - [Luxon](https://moment.github.io/luxon/) - A powerful, modern, and friendly wrapper for Javascript dates and times.
   jQuery!
@@ -57,6 +57,7 @@ description: Developer resources
 ## File System
 
 - [fdir](https://github.com/thecodrr/fdir) - The Fastest Directory Crawler & Globber for NodeJS
+- [globby](https://github.com/sindresorhus/globby) - User-friendly glob matching
 
 ## Generic
 
@@ -123,7 +124,7 @@ description: Developer resources
 - [highlight.js](https://highlightjs.org/) - Syntax highlighting for the Web
 - [Honeypot](https://github.com/Shmakov/Honeypot) - Low interaction honeypot that displays real time attacks
 - [howler.js](https://howlerjs.com/) makes working with audio in JavaScript easy and reliable across all platforms.
-- [iMask.js](https://unmanner.github.io/imaskjs/) - vanilla javascript input mask
+- [iMask.js](https://imask.js.org/) - vanilla javascript input mask
 - [Fuse.js](http://kiro.me/projects/fuse.html) - Lightweight fuzzy-search, in JavaScript.
 - [jlinq](http://www.hugoware.net/projects/jlinq) - Complex queries on jSon data.
 - [Johnny-Five](http://johnny-five.io/) - the JavaScript Robotics & IoT Platform

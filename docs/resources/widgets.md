@@ -6,6 +6,7 @@ description: Developer resources
 
 ## Autocomplete & Select
 
+- [autoComplete.js](https://tarekraafat.github.io/autoComplete.js/#/) - Simple autocomplete pure vanilla Javascript library
 - [Awesomplete](http://leaverou.github.io/awesomplete/) - Ultra lightweight, customizable, simple autocomplete widget with zero dependencies
 - [Cleave.js](http://nosir.github.io/cleave.js/) - Format your input content when you are typing
 - [Completely](http://complete-ly.appspot.com/) - A javascript library for autocompletion
@@ -19,6 +20,7 @@ description: Developer resources
 - [Glider.js](https://nickpiscitelli.github.io/Glider.js/)
 - [ItemSlide.js](http://itemslide.github.io/) - A simple & beautiful touch carousel
 - [Keen Slider](https://keen-slider.io/) - is a free library agnostic touch slider with native touch/swipe behavior and great performance.
+- [simple-keyboard](https://virtual-keyboard.js.org/) - a fast, dependency-free and customizable virtual keyboard for rich and snappy web applications.
 - [simple-slider](http://ruyadorno.github.io/simple-slider/) - Extremely lightweight JavaScript carousel micro library
 - [slick](http://kenwheeler.github.io/slick/) - The last carousel you'll ever need
 
@@ -81,7 +83,6 @@ description: Developer resources
 ## Grids
 
 - [jsgrids](https://jsgrids.io/) - A List of JavaScript Spreadsheets and Data Grid Libraries
-
 - [Grid.js](https://gridjs.io/) - a Free and open-source HTML table plugin written in TypeScript.
 
 ## Input
@@ -123,6 +124,8 @@ description: Developer resources
 - [Rough.js](https://roughjs.com/) - Create graphics with a hand-drawn, sketchy, appearance
 - [signature_pad](https://github.com/szimek/signature_pad) - HTML5 canvas based smooth signature drawing
 - [simple-data-table](https://github.com/piecioshka/simple-data-table)
+- [Tagger](https://github.com/jcubic/tagger) - Zero dependency, Vanilla JavaScript Tag Editor
+- [tagify](https://yaireo.github.io/tagify/)
 - [Tippy.js](https://atomiks.github.io/tippyjs/) A lightweight, vanilla JavaScript tooltip library
 - [Uppload](https://uppload.js.org/) -
 - [Uppy](http://uppy.io/) - File uploader
@@ -140,7 +143,7 @@ description: Developer resources
 - [ScrollWatch](https://edull24.github.io/ScrollWatch/) - Easily add lazy loading, infinite scrolling, or any other dynamic interaction based on scroll position.
 - [Sidr](https://www.berriart.com/sidr/)
 - [Slideout.js](http://mango.github.io/slideout/)
-- [Swiper](http://idangero.us/swiper/) a mobile toch slider
+- [Swiper](https://swiperjs.com/) is the most modern free mobile touch slider
 - [viewport.js](http://asvd.github.io/viewport/)
 
 ## Notifications

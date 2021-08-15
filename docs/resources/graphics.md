@@ -14,7 +14,7 @@ description: Developer resources
 - [lightgallery.js](https://sachinchoolur.github.io/lightgallery.js/) - Full featured javascript lightbox gallery, No dependencies.
 - [Rough Notation](https://roughnotation.com/) - A small JavaScript library to create and animate annotations on a web page
 - [snapGallery.js](http://neerajdelima.ga/snapGallery/)
-- [viewer.js](http://fengyuanchen.github.io/viewerjs/) - JavaScript image viewer.
+- [Viewer.js](http://fengyuanchen.github.io/viewerjs/) - JavaScript image viewer.
 - [CollagePlus](http://collageplus.edlea.com/) - An image gallery plugin for jQuery
 
 ## Canvas

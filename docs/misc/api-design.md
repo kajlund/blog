@@ -8,6 +8,10 @@ description: From Shawn Wildermuth's Pluralsight course on API Design.
 > The basics of API design picked up by watching the PluralSight API Design Course
 by Shawn Wildermuth.
 
+#### Resources
+
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) - Free Fake REST API
+
 **See also**: HTTP Response Codes are defined in [W3C RFC2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). [jsonapi.org](http://jsonapi.org/) has info on standard ways of representing data.
 
 The way APIs are designed is important because:
