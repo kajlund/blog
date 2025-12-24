@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <article>
+    <h1>{{ post.title }}</h1>
+    <p><em>Published on {{ post.createdAt }}</em></p>
+    <hr>
+    <div>
+      {{ content | safe }}  {# The "safe" filter allows HTML rendering #}
+    </div>
+  </article>
+{% endblock %}
