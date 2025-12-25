@@ -3,13 +3,15 @@ import { z } from 'zod';
 import { getPostsDAO } from '../db/posts.dao.js';
 import { generateErrrorObject } from '../utils/helpers.js';
 
-const PostSchema = z.object({
-  title: z.string().trim().default(''),
-  slug: z.string().trim().min(2).max(150),
-  description: z.string().trim().default(''),
-  content: z.string().default(''),
-  imageUrl: z.string().trim().default(''),
-}).strict();
+const PostSchema = z
+  .object({
+    title: z.string().trim().default(''),
+    slug: z.string().trim().min(2).max(150),
+    description: z.string().trim().default(''),
+    content: z.string().default(''),
+    imageUrl: z.string().trim().default(''),
+  })
+  .strict();
 
 export function getPostService(cnf, log) {
   const dao = getPostsDAO(log);
@@ -77,5 +79,5 @@ export function getPostService(cnf, log) {
       const updated = await dao.updateById(id, result.data);
       return updated;
     },
-  }
+  };
 }

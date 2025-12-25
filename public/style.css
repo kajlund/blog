@@ -1,0 +1,25 @@
+:root {
+    --brand: #2563eb;
+    --text: #1f2937;
+    --bg: #ffffff;
+    --muted: #6b7280;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+.separator { margin: 0 0.5rem; }
+
+/* Styles for Markdown Content */
+.markdown-body h1, .markdown-body h2 { margin-top: 2rem; }
+.markdown-body code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 4px; }
+.markdown-body pre { background: #1f2937; color: white; padding: 1rem; overflow-x: auto; border-radius: 8px; }
+.markdown-body blockquote { border-left: 4px solid var(--brand); padding-left: 1rem; font-style: italic; }
+

@@ -1,12 +1,22 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <article>
-    <h1>{{ post.title }}</h1>
-    <p><em>Published on {{ post.createdAt }}</em></p>
-    <hr>
-    <div>
-      {{ content | safe }}  {# The "safe" filter allows HTML rendering #}
+  <article class="blog-post">
+    <header>
+      <h1>{{ post.title }}</h1>
+      <div class="meta">
+        <time>Published: {{ post.createdAt | formatDate }}</time>
+        {% if post.updatedAt and post.updatedAt != post.createdAt %}
+          <span class="separator">•</span>
+          <time class="updated">Updated: {{ post.updatedAt | formatDate }}</time>
+        {% endif %}
+        <span class="separator">•</span>
+        <span>{{ content | readingTime }}</span>
+      </div>
+    </header>
+
+    <div class="markdown-body">
+      {{ content | safe }}
     </div>
   </article>
 {% endblock %}

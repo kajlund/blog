@@ -2,6 +2,7 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import { rateLimit } from 'express-rate-limit';
 import session from 'express-session';
+import { DateTime } from 'luxon';
 import nunjucks from 'nunjucks';
 import httpLogger from 'pino-http';
 
@@ -79,6 +80,20 @@ export function getApp(cnf, log) {
 
   nj.addFilter('floor', function (num) {
     return Math.floor(num);
+  });
+
+  nj.addFilter('formatDate', (dateStr) => {
+    if (!dateStr) return '';
+    return DateTime.fromSQL(dateStr).toLocaleString(DateTime.DATETIME_MED);
+  });
+
+  nj.addFilter('readingTime', (content) => {
+    const wordsPerMinute = 225;
+    // Remove HTML tags and split by whitespace
+    const text = content.replace(/<\/?[^>]+(>|$)/g, '');
+    const wordCount = text.split(/\s+/).length;
+    const minutes = Math.ceil(wordCount / wordsPerMinute);
+    return `${minutes} min read`;
   });
 
   // Logging Middleware

@@ -15,7 +15,15 @@ export function getPostsDAO(log) {
     },
     fetchLatestPosts: async function () {
       const result = await db
-        .select()
+        .select({
+          id: posts.id,
+          title: posts.title,
+          slug: posts.slug,
+          description: posts.description,
+          imageUrl: posts.imageUrl,
+          createdAt: posts.createdAt,
+          updatedAt: posts.updatedAt,
+        })
         .from(posts)
         .orderBy(desc(posts.createdAt))
         .limit(3);
@@ -41,17 +49,22 @@ export function getPostsDAO(log) {
       return post;
     },
     insert: async function (data) {
-      const [newPost] = await db
-        .insert(posts)
-        .values(data)
-        .returning();
-      log.debug(newPost, 'Created activity');
+      const [newPost] = await db.insert(posts).values(data).returning();
+      log.debug(newPost, 'Created post');
       return newPost;
     },
     query: async function (qry) {
       log.debug(qry, 'Querying posts');
       const result = await db
-        .select()
+        .select({
+          id: posts.id,
+          title: posts.title,
+          slug: posts.slug,
+          description: posts.description,
+          imageUrl: posts.imageUrl,
+          createdAt: posts.createdAt,
+          updatedAt: posts.updatedAt,
+        })
         .from(posts)
         .orderBy(desc(posts.createdAt));
       log.debug(result, 'Found posts');
@@ -59,7 +72,7 @@ export function getPostsDAO(log) {
     },
     updateById: async function (id, data) {
       const [updated] = await db
-        .update(activities)
+        .update(posts)
         .set(data)
         .where(eq(posts.id, id))
         .returning();

@@ -20,8 +20,8 @@ export function getPostController(cnf, log) {
       const post = await svcPosts.getPostBySlug(req.params.slug);
       if (!post) throw new AppError(404, 'Not Found');
 
-      const htmlContent = marked.parse(post.content);
-      res.render('post', { title: 'Post', page: 'blog', post, htmlContent });
+      const content = marked.parse(post.content);
+      res.render('post', { title: 'Post', page: 'blog', post, content });
     }),
     showPostEditView: asyncHandler(async (req, res) => {
       const posts = svcPosts.fetchLatestPosts();
@@ -39,5 +39,5 @@ export function getPostController(cnf, log) {
       const posts = svcPosts.fetchLatestPosts();
       res.render('home', { title: 'Home', page: 'home', posts });
     }),
-  }
+  };
 }
