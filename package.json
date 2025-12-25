@@ -4,6 +4,7 @@
   "description": "Personal blog",
   "main": "src/index.js",
   "scripts": {
+    "db:import-md": "node --env-file=.env.development ./scripts/importmarkdown.js",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "dev": "node --watch --env-file=.env.development ./src/index.js",
