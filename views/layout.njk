@@ -3,14 +3,16 @@
 <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/style.css">
+    {% block head %}{% endblock %}
 </head>
 <body>
     <nav>
         <a href="/">Home</a>
-        <a href="/blog">Posts</a>
+        <a href="/posts">Posts</a>
     </nav>
     <main>
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </main>
+    {% block scripts %}{% endblock %}
 </body>
 </html>
