@@ -9,8 +9,8 @@ export function getPostController(cnf, log) {
 
   return {
     showPosts: asyncHandler(async (req, res) => {
-      const posts = await svcPosts.fetchLatestPosts();
-      res.render('home', { title: 'Home', page: 'home', posts });
+      const posts = await svcPosts.queryPosts();
+      res.render('home', { title: 'Blog', page: 'posts', posts });
     }),
     showAddPostView: asyncHandler(async (req, res) => {
       const posts = svcPosts.fetchLatestPosts();

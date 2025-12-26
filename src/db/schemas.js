@@ -1,4 +1,4 @@
-import { integer, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
 import { createId } from '@paralleldrive/cuid2';
 
@@ -22,6 +22,6 @@ export const posts = sqliteTable('posts', {
   content: text().notNull().default(''),
   imageUrl: text().notNull().default(''),
   tags: text().notNull().default(''),
+  published: integer('published', { mode: 'boolean' }).default(false),
   ...timestamps,
 });
-

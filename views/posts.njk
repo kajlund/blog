@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Posts</h1>
+  </section>
+
+  <section class="latest-posts">
+    <div class="post-grid">
+      {% for post in posts %}
+        <div class="post-card">
+          <h3><a href="/posts/{{ post.slug }}">{{ post.title }}</a></h3>
+          <p>{{ post.description }}</p>
+          <small>{{ post.createdAt }} | {{ post.updatedAt }}</small>
+        </div>
+      {% else %}
+        <p>No posts found!</p>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
