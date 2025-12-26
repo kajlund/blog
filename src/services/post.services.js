@@ -10,6 +10,7 @@ const PostSchema = z
     description: z.string().trim().default(''),
     content: z.string().default(''),
     imageUrl: z.string().trim().default(''),
+    tags: z.optional().array(z.string().trim()).default(''),
   })
   .strict();
 
@@ -51,10 +52,12 @@ export function getPostService(cnf, log) {
     },
     getPostById: async (id) => {
       const found = await dao.findById(id);
+      found.tagArray = JSON.parse(found.tags || '[]');
       return found;
     },
     getPostBySlug: async (slug) => {
       const found = await dao.findBySlug(slug);
+      found.tagArray = found.tags ? found.tags.split(',') : [];
       return found;
     },
     queryPosts: async (qry) => {

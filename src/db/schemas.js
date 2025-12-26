@@ -21,6 +21,7 @@ export const posts = sqliteTable('posts', {
   description: text().notNull().default(''),
   content: text().notNull().default(''),
   imageUrl: text().notNull().default(''),
+  tags: text().notNull().default(''),
   ...timestamps,
 });
 

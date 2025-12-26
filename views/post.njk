@@ -12,6 +12,11 @@
         {% endif %}
         <span class="separator">•</span>
         <span>{{ content | readingTime }}</span>
+        <div class="tags">
+          {% for tag in post.tagArray %}
+              <a href="/tags/{{ tag }}" class="tag-badge">#{{ tag }}</a>
+          {% endfor %}
+        </div>
       </div>
     </header>
 
