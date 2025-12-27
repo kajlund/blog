@@ -28,10 +28,10 @@ export function getBlogRoutes(cnf, log) {
         handler: ctrl.showTaggedPosts,
       },
       {
-        method: 'post',
-        path: '/posts/search',
+        method: 'get',
+        path: '/search',
         middleware: [],
-        handler: ctrl.searchPosts,
+        handler: ctrl.showSearchForm,
       },
       {
         method: 'get',

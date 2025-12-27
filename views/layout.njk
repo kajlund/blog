@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/style.css">
     {% block head %}{% endblock %}
+    <script>
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <form action="/posts/search" method="POST" style="display: inline;">
-        <input type="text" name="qry" placeholder="Search posts..." required>
-        <button type="submit">Search</button>
-      </form>
-    </nav>
+    <header>
+      <nav>
+        <a href="/"><strong>Blog</strong></a>
+        <a href="/search" style="margin-left: 15px;">Search</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
+    </header>
+
     <main>
       {% block content %}{% endblock %}
     </main>
+    <script>
+      const btn = document.getElementById('theme-toggle');
+      const updateBtnLabel = (theme) => {
+        btn.innerHTML = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+      };
+
+      // Initial label
+      updateBtnLabel(savedTheme);
+
+      btn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateBtnLabel(newTheme);
+      });
+    </script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

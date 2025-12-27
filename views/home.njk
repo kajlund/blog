@@ -2,23 +2,31 @@
 
 {% block content %}
   <section class="hero">
-    <h1>Welcome to My Thoughts</h1>
-    <p>A collection of articles on JavaScript, Node, and more.</p>
+    <h1>My Scriblings</h1>
+    <p>A collection of notes on WebDev, JavaScript, Node.js, APIs and more.</p>
   </section>
 
   <section class="latest-posts">
-    <h2>Recent Posts</h2>
-    <div class="tags">
+    <div class="tag-container">
       {% for tag in tags %}
         <a href="/tags/{{ tag }}" class="tag-badge">#{{ tag }}</a>
       {% endfor %}
     </div>
+    <h2>Recent Posts</h2>
     <div class="post-grid">
       {% for post in posts %}
         <div class="post-card">
           <h3><a href="/posts/{{ post.slug }}">{{ post.title }}</a></h3>
           <p>{{ post.description }}</p>
-          <small>{{ post.createdAt }} | {{ post.updatedAt }}</small>
+          <time class="small-text muted-text">
+            Created: {{ post.createdAt | formatDate }}
+          </time>
+          {% if post.updatedAt !== post.createdAt %}
+            <span class="separator">•</span>
+            <time  class="small-text muted-text">
+              Updated: {{ post.updatedAt | formatDate }}
+            </time>
+          {% endif %}
         </div>
       {% else %}
         <p>No posts found!</p>

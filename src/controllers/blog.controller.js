@@ -22,17 +22,6 @@ export function getBlogController(cnf, log) {
         isPreview: true,
       });
     }),
-    searchPosts: asyncHandler(async (req, res) => {
-      const { qry } = req.body;
-      const posts = await svc.queryPosts(qry);
-      log.info(posts.length);
-      res.render('search', {
-        title: 'Search',
-        page: 'home',
-        posts,
-        query: qry,
-      });
-    }),
     showHomeView: asyncHandler(async (req, res) => {
       const tags = await svc.getAllTags();
       const posts = await svc.fetchLatestPosts();
@@ -51,6 +40,16 @@ export function getBlogController(cnf, log) {
         page: 'blog',
         post: result.post,
         content: result.content,
+      });
+    }),
+    showSearchForm: asyncHandler(async (req, res) => {
+      const searchTerm = req.query.q ? req.query.q.trim() : '';
+      const posts = await svc.queryPosts(searchTerm);
+      res.render('search', {
+        title: 'Search',
+        page: 'home',
+        posts,
+        query: searchTerm,
       });
     }),
     showTaggedPosts: asyncHandler(async (req, res) => {

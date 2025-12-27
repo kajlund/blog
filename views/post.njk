@@ -1,38 +1,36 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-  <article class="blog-post">
-    <header>
-      <h1>{{ post.title }}</h1>
-      <div class="meta">
-        <time>Published: {{ post.createdAt | formatDate }}</time>
-        {% if post.updatedAt and post.updatedAt != post.createdAt %}
-          <span class="separator">•</span>
-          <time class="updated">Updated: {{ post.updatedAt | formatDate }}</time>
-        {% endif %}
-        <span class="separator">•</span>
-        <span>{{ content | readingTime }}</span>
-        <div class="tags">
-          {% for tag in post.tags.split(' ') %}
-            {% if tag %}
-              <a href="/tags/{{ tag }}" class="tag-badge">#{{ tag }}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    </header>
+  <header class="post-header">
+    <h1>{{ post.title }}</h1>
 
-    <div class="markdown-body">
-      {{ content | safe }}
+    <div class="post-meta">
+      <time>Published: {{ post.createdAt | formatDate }}</time>
+      {% if post.updatedAt and post.updatedAt != post.createdAt %}
+        <span class="separator">•</span>
+        <time class="updated">Updated: {{ post.updatedAt | formatDate }}</time>
+      {% endif %}
+      <span class="separator">•</span>
+      <span>{{ content | readingTime }}</span>
     </div>
+
+    <div class="tag-container">
+      {% for tag in post.tags.split(' ') %}
+        {% if tag %}
+          <a href="/tags/{{ tag }}" class="tag-badge">#{{ tag }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </header>
+
+  <article class="blog-content">
+    {{ content | safe }}
   </article>
-<style>
-    .post-navigation { display: flex; justify-content: space-between; margin-top: 2rem; }
-    .next { text-align: right; }
-</style>
+
+  <nav class="post-navigation"></div>
 {% endblock %}
 
 {% block scripts %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 {% endblock %}
