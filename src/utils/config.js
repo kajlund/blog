@@ -17,7 +17,7 @@ function getDefaultConfig() {
     port: parseInt(process.env.PORT) || 3000,
     logLevel: process.env.LOG_LEVEL || 'info',
     logHttp: process.env.LOG_HTTP === '1',
-    dbConnection: process.env.DB_CONNECTION,
+    dbConnection: process.env.DB_CONNECTION || 'file:blog.db',
     importPath: process.env.IMPORT_PATH,
   };
 }
