@@ -1,43 +1,28 @@
-import { eq, desc } from 'drizzle-orm';
+import { and, eq, desc, like, or, sql } from 'drizzle-orm';
 
 import db from './index.js';
 import { posts } from './schemas.js';
 
 export function getPostsDAO(log) {
   return {
-    deleteById: async function (id) {
-      const [deleted] = await db
-        .delete(posts)
-        .where(eq(posts.id, id))
-        .returning();
-      log.debug(deleted, `Deleted post by id ${id}`);
-      return deleted;
-    },
     fetchLatestPosts: async function () {
       const result = await db
-        .select({
-          id: posts.id,
-          title: posts.title,
-          slug: posts.slug,
-          description: posts.description,
-          imageUrl: posts.imageUrl,
-          createdAt: posts.createdAt,
-          updatedAt: posts.updatedAt,
-        })
+        .select()
         .from(posts)
+        .where(eq(posts.published, true))
         .orderBy(desc(posts.createdAt))
         .limit(3);
       log.debug(result, 'Found latest posts');
       return result;
     },
-    findById: async function (id) {
-      const [found] = await db
+    fetchPublishedPosts: async function () {
+      const result = await db
         .select()
         .from(posts)
-        .where(eq(posts.id, id))
-        .limit(1);
-      log.debug(found, `Found post by id ${id}`);
-      return found;
+        .where(eq(posts.published, true))
+        .orderBy(desc(posts.createdAt));
+      log.debug(result, 'Found published posts');
+      return result;
     },
     findBySlug: async function (slug) {
       const [post] = await db
@@ -48,36 +33,46 @@ export function getPostsDAO(log) {
       log.debug(post, `Found post by slug ${slug}`);
       return post;
     },
-    insert: async function (data) {
-      const [newPost] = await db.insert(posts).values(data).returning();
-      log.debug(newPost, 'Created post');
-      return newPost;
+    findPublishedBySlug: async function (slug) {
+      const [post] = await db
+        .select()
+        .from(posts)
+        .where(eq(posts.slug, slug), eq(posts.published, true))
+        .limit(1);
+      log.debug(post, `Found post by slug ${slug}`);
+      return post;
+    },
+    findPublishedPostsByTag: async function (tag) {
+      const results = await db
+        .select()
+        .from(posts)
+        .where(
+          and(
+            eq(posts.published, true),
+            sql`' ' || ${posts.tags} || ' ' LIKE ${'% ' + tag + ' %'}`,
+          ),
+        )
+        .orderBy(desc(posts.createdAt));
+      log.debug(results, 'Found tagged posts');
+      return results;
     },
     query: async function (qry) {
+      const searchTerm = `%${qry}%`;
       log.debug(qry, 'Querying posts');
-      const result = await db
-        .select({
-          id: posts.id,
-          title: posts.title,
-          slug: posts.slug,
-          description: posts.description,
-          imageUrl: posts.imageUrl,
-          createdAt: posts.createdAt,
-          updatedAt: posts.updatedAt,
-        })
+      const results = await db
+        .select()
         .from(posts)
-        .orderBy(desc(posts.createdAt));
-      log.debug(result, 'Found posts');
-      return result;
-    },
-    updateById: async function (id, data) {
-      const [updated] = await db
-        .update(posts)
-        .set(data)
-        .where(eq(posts.id, id))
-        .returning();
-      log.debug(updated, `Updated post by id ${id}`);
-      return updated;
+        .where(
+          and(
+            eq(posts.published, true),
+            or(
+              like(posts.title, searchTerm),
+              like(posts.description, searchTerm),
+              like(posts.content, searchTerm),
+            ),
+          ),
+        );
+      return results;
     },
   };
 }

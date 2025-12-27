@@ -1,0 +1,18 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <h1>Search Results for "{{ query }}"</h1>
+
+  {% if posts.length > 0 %}
+    <ul class="post-list">
+      {% for post in posts %}
+        <li>
+          <a href="/posts/{{ post.slug }}">{{ post.title }}</a>
+          <p>{{ post.description }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+      <p>No posts found matching your search.</p>
+  {% endif %}
+{% endblock %}

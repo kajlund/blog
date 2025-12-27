@@ -1,0 +1,18 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <h1>Posts with tag #{{ tag }}</h1>
+
+  {% if posts.length > 0 %}
+    <ul class="post-list">
+      {% for post in posts %}
+        <li>
+          <a href="/posts/{{ post.slug }}">{{ post.title }}</a>
+          <p>{{ post.description }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+      <p>No posts found matching tag #{{ tag }}.</p>
+  {% endif %}
+{% endblock %}

@@ -8,7 +8,7 @@ const configSchema = z.strictObject({
     .optional(),
   logHttp: z.boolean().optional(),
   dbConnection: z.string().trim(),
-  cookieSecret: z.string().min(30),
+  importPath: z.string().trim().optional(),
 });
 
 function getDefaultConfig() {
@@ -18,7 +18,7 @@ function getDefaultConfig() {
     logLevel: process.env.LOG_LEVEL || 'info',
     logHttp: process.env.LOG_HTTP === '1',
     dbConnection: process.env.DB_CONNECTION,
-    cookieSecret: process.env.COOKIE_SECRET,
+    importPath: process.env.IMPORT_PATH,
   };
 }
 

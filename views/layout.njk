@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/style.css">
     {% block head %}{% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/posts">Posts</a>
+      <a href="/">Home</a>
+      <form action="/posts/search" method="POST" style="display: inline;">
+        <input type="text" name="qry" placeholder="Search posts..." required>
+        <button type="submit">Search</button>
+      </form>
     </nav>
     <main>
       {% block content %}{% endblock %}
     </main>
     {% block scripts %}{% endblock %}
-</body>
+  </body>
 </html>

@@ -1,13 +1,11 @@
 import express from 'express';
 
-import { getHomeRoutes } from './home.routes.js';
-import { getPostRoutes } from './post.routes.js';
+import { getBlogRoutes } from './blog.routes.js';
 
 export function getRouter(cnf, log) {
-  const homeRoutes = getHomeRoutes(cnf, log);
-  const postRoutes = getPostRoutes(cnf, log);
+  const blogRoutes = getBlogRoutes(cnf, log);
 
-  const groups = [homeRoutes, postRoutes];
+  const groups = [blogRoutes];
   const router = express.Router();
 
   groups.forEach(({ group, routes }) => {

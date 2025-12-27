@@ -3,6 +3,11 @@
 {% block content %}
   <section class="hero">
     <h1>Posts</h1>
+    <div class="tags">
+      {% for tag in tags %}
+        <a href="/tags/{{ tag }}" class="tag-badge">#{{ tag }}</a>
+      {% endfor %}
+    </div>
   </section>
 
   <section class="latest-posts">

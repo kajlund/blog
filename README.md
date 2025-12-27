@@ -1,6 +1,6 @@
 # Blog App
 
-Web application to handle blog posts implemented using Node.js/express.
+Web application to show blog posts implemented using Node.js/express.
 
 ### Resources
 

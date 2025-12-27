@@ -8,6 +8,11 @@
 
   <section class="latest-posts">
     <h2>Recent Posts</h2>
+    <div class="tags">
+      {% for tag in tags %}
+        <a href="/tags/{{ tag }}" class="tag-badge">#{{ tag }}</a>
+      {% endfor %}
+    </div>
     <div class="post-grid">
       {% for post in posts %}
         <div class="post-card">

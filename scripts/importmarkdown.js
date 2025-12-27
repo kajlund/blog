@@ -1,51 +1,45 @@
 import { readdirSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import path from 'node:path';
 
 import matter from 'gray-matter';
 
+import { getConfig } from '../src/utils/config.js';
 import { posts } from '../src/db/schemas.js';
 import db from '../src/db/index.js';
 
-async function syncPosts() {
-  const postsDirectory = join(process.cwd(), 'content');
-  const filenames = readdirSync(postsDirectory);
-  console.log(`Found ${filenames.length} files. Starting sync...`);
+async function rebuildDatabase() {
+  const cnf = getConfig();
+  const postsDir = path.normalize(cnf.importPath);
+  const files = readdirSync(postsDir).filter((f) => f.endsWith('.md'));
 
-  try {
-    let slug;
-    for (const filename of filenames) {
-      if (!filename.endsWith('.md')) continue;
+  db.delete(posts).run();
+  console.log(`Rebuilding blog from ${files.length} files...`);
 
-      const filePath = join(postsDirectory, filename);
-      const fileContent = readFileSync(filePath, 'utf-8');
+  for (const file of files) {
+    const filePath = path.join(postsDir, file);
+    const fileContent = readFileSync(filePath, 'utf-8');
+    // Parse Frontmatter and Content
+    const { data, content } = matter(fileContent);
 
-      // Parse Frontmatter and Content
-      const { data, content } = matter(fileContent);
-      slug = filename.replace('.md', '');
+    // Ensure tags are a clean space-separated string: "tag1 tag2 tag3"
+    const cleanTags = Array.isArray(data.tags)
+      ? data.tags.join(' ').trim()
+      : (data.tags || '').toString().trim().replace(/\s+/g, ' ');
 
-      // Drizzle Upsert
-      await db
-        .insert(posts)
-        .values({
-          title: data.title || 'Untitled',
-          slug: slug,
-          description: data.description || '',
-          content: content,
-        })
-        .onConflictDoUpdate({
-          target: posts.slug,
-          set: {
-            title: data.title,
-            description: data.description,
-            content: content,
-          },
-        });
-    }
-    console.log(`✅ Synced: ${slug}`);
-  } catch (err) {
-    console.error(err);
-    throw err;
+    await db.insert(posts).values({
+      author: data.author,
+      title: data.title || 'Untitled',
+      slug: file.replace('.md', ''),
+      description: data.description || '',
+      tags: cleanTags,
+      imageUrl: data.imageUrl,
+      published: data.published ?? false,
+      createdAt: new Date(data.createdAt).toISOString(),
+      updatedAt: new Date(data.updatedAt).toISOString(),
+      content,
+    });
   }
+  console.log('✅ Blog data refreshed.');
 }
 
-syncPosts().catch(console.error);
+rebuildDatabase().catch(console.error);
