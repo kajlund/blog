@@ -2,9 +2,10 @@
   /* Light Theme Colors */
   --bg: #ffffff;
   --text: #1a1a1a;
-  --muted: #555555;
-  --accent: #0066cc;
-  --border: #eeeeee;
+  --muted: #777;
+  --accent: #7f18b4;
+  /* --accent: #0066cc; */
+  --border: #eee;
   --code-bg: #f8f8f8;
   --nav-bg: #fafafa;
 }
@@ -25,9 +26,9 @@ html {
 }
 
 body {
+  font-family: 'Geist', Roboto, Helvetica, Arial, sans-serif;
   font-size: 1.6rem; /* Default text is 16px */
   line-height: 1.7;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);
   max-width: 80rem; /* 800px */
@@ -59,17 +60,43 @@ nav a:hover {
 
 /* 3. Theme Toggle */
 #theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  padding: 0.8rem 1.6rem;
+  padding: 0.5rem 1rem;
   border: 0.1rem solid var(--border);
-  background: var(--nav-bg);
+  background: transparent;
   color: var(--text);
   border-radius: 0.4rem;
   font-size: 1.4rem;
 }
 
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+}
+#theme-toggle:hover {
+  color: #fff;
+  box-shadow: 3px 3px 3px rgba(27, 37, 46, 0.2);
+}
+#theme-toggle:hover .icon { transform: rotate(-15deg) scale(1.1); }
+
 /* 4. Typography & Blog Content */
-h1 { font-size: 3.2rem; margin-bottom: 1rem; line-height: 1.2; }
+h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
 h2 { font-size: 2.4rem; margin-top: 3rem; }
 h3 { font-size: 2rem; }
 

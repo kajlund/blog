@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     {% block head %}{% endblock %}
     <script>
@@ -16,7 +17,8 @@
         <a href="/"><strong>Blog</strong></a>
         <a href="/search" style="margin-left: 15px;">Search</a>
       </nav>
-      <button id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
+      <button id="theme-toggle" aria-label="Toggle theme">
+      </button>
     </header>
 
     <main>
@@ -25,7 +27,7 @@
     <script>
       const btn = document.getElementById('theme-toggle');
       const updateBtnLabel = (theme) => {
-        btn.innerHTML = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        btn.innerHTML = theme === 'dark' ? '<svg class="icon" aria-hidden="true"><use xlink:href="#ico-sun"></use></svg>' : '<svg class="icon" aria-hidden="true"><use xlink:href="#ico-moon"></use></svg>';
       };
 
       // Initial label
@@ -41,5 +43,7 @@
       });
     </script>
     {% block scripts %}{% endblock %}
+    {# Include SVG icons #}
+    {% include "partials/icons.njk" %}
   </body>
 </html>
