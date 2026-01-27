@@ -1,23 +1,33 @@
-import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
-import { sql } from 'drizzle-orm';
 import { createId } from '@paralleldrive/cuid2';
+import {
+  boolean,
+  pgTable,
+  text,
+  timestamp,
+  varchar,
+} from 'drizzle-orm/pg-core';
 
-export const posts = sqliteTable('posts', {
-  id: text('id')
+const timestamps = {
+  createdAt: timestamp('createdAt', { withTimezone: true, mode: 'string' })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp('updatedAt', { withTimezone: true, mode: 'string' })
+    .notNull()
+    .defaultNow(),
+};
+
+export const posts = pgTable('posts', {
+  id: varchar()
     .primaryKey()
     .$defaultFn(() => createId()),
-  author: text().notNull().default(''),
-  title: text().notNull().default(''),
+  author: varchar({ length: 50 }).notNull().default(''),
+  title: varchar({ length: 255 }).notNull().default(),
   slug: text().notNull().unique(),
   description: text().notNull().default(''),
   content: text().notNull().default(''),
-  imageUrl: text().notNull().default(''),
+  imageUrl: varchar({ length: 255 }).notNull().default(''),
   tags: text().notNull().default(''),
-  published: integer('published', { mode: 'boolean' }).default(false),
-  createdAt: text('createdAt')
-    .notNull()
-    .default(sql`(CURRENT_TIMESTAMP)`),
-  updatedAt: text('updatedAt')
-    .notNull()
-    .default(sql`(CURRENT_TIMESTAMP)`),
+  published: boolean().notNull().default(false),
+  featured: boolean().notNull().default(false),
+  ...timestamps,
 });

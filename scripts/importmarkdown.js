@@ -26,17 +26,21 @@ async function rebuildDatabase() {
       ? data.tags.join(' ').trim()
       : (data.tags || '').toString().trim().replace(/\s+/g, ' ');
 
+    // Use the filename (minus .md) as the slug
+    const slug = file.replace('.md', '');
+
     await db.insert(posts).values({
       author: data.author,
       title: data.title || 'Untitled',
-      slug: file.replace('.md', ''),
+      slug,
       description: data.description || '',
+      content,
       tags: cleanTags,
       imageUrl: data.imageUrl,
-      published: data.published ?? false,
-      createdAt: new Date(data.createdAt).toISOString(),
-      updatedAt: new Date(data.updatedAt).toISOString(),
-      content,
+      published: data.published == true,
+      featured: data.featured === true,
+      createdAt: data.createdAt,
+      updatedAt: data.updatedAt,
     });
   }
   console.log('✅ Blog data refreshed.');

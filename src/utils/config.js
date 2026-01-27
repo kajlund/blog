@@ -1,31 +1,38 @@
 import { z } from 'zod';
 
 const configSchema = z.strictObject({
-  env: z.enum(['development', 'production', 'test']).optional(),
-  port: z.number().int().positive().gte(80).lte(65000),
+  env: z
+    .enum(['development', 'production', 'test'])
+    .optional()
+    .default('development'),
+  port: z.coerce.number().int().positive().gte(80).lte(65000),
   logLevel: z
     .enum(['trace', 'debug', 'info', 'warn', 'error', 'fatal', 'silent'])
-    .optional(),
-  logHttp: z.boolean().optional(),
-  dbConnection: z.string().trim(),
+    .optional()
+    .default('info'),
+  logHttp: z.coerce.boolean().optional().default(false),
+  dbUrl: z.string().trim(),
   importPath: z.string().trim().optional(),
 });
 
-function getDefaultConfig() {
+function getEnvConfig() {
   return {
-    env: process.env.NODE_ENV || 'development',
-    port: parseInt(process.env.PORT) || 3000,
-    logLevel: process.env.LOG_LEVEL || 'info',
-    logHttp: process.env.LOG_HTTP === '1',
-    dbConnection: process.env.DB_CONNECTION || 'file:blog.db',
+    env: process.env.NODE_ENV,
+    port: process.env.PORT,
+    logLevel: process.env.LOG_LEVEL,
+    logHttp: process.env.LOG_HTTP,
+    dbUrl: process.env.DATABASE_URL,
     importPath: process.env.IMPORT_PATH,
   };
 }
 
 export function getConfig(config = {}) {
-  const cnf = { ...getDefaultConfig(), ...config };
-  configSchema.parse(cnf);
-  cnf.isDev = cnf.env === 'development';
-
+  const candidate = { ...getEnvConfig(), ...config };
+  const result = configSchema.safeParse(candidate);
+  if (!result.success) {
+    console.log(result.error);
+    throw new Error('Configuration faulty');
+  }
+  const cnf = { ...result.data, isDev: result.data.env === 'development' };
   return cnf;
 }
