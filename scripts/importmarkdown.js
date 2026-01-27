@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
+import 'dotenv/config';
 import matter from 'gray-matter';
 
 import { getConfig } from '../src/utils/config.js';
@@ -12,7 +13,7 @@ async function rebuildDatabase() {
   const postsDir = path.normalize(cnf.importPath);
   const files = readdirSync(postsDir).filter((f) => f.endsWith('.md'));
 
-  db.delete(posts).run();
+  await db.delete(posts);
   console.log(`Rebuilding blog from ${files.length} files...`);
 
   for (const file of files) {
@@ -39,8 +40,12 @@ async function rebuildDatabase() {
       imageUrl: data.imageUrl,
       published: data.published == true,
       featured: data.featured === true,
-      createdAt: data.createdAt,
-      updatedAt: data.updatedAt,
+      createdAt: data.createdAt?.toISOString()
+        ? data.createdAt.toISOString()
+        : new Date().toISOString(),
+      updatedAt: data.updatedAt?.toISOString
+        ? data.updatedAt.toISOString()
+        : new Date().toISOString(),
     });
   }
   console.log('✅ Blog data refreshed.');
