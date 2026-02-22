@@ -25,7 +25,7 @@ export function getBlogService(cnf, log) {
       const posts = await dao.fetchPublishedPosts();
       let xml = `<?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-          <url><loc>https://kajlund.com/blog</loc></url>`;
+          <url><loc>https://blog.kajlund.com</loc></url>`;
       posts.forEach((post) => {
         xml += `
           <url>
